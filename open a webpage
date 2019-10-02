@@ -1,0 +1,21 @@
+package Test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "F:\\demo\\chromedriver.exe");
+		 
+		WebDriver driver = new ChromeDriver();
+
+	        String baseUrl = "https://www.facebook.com";
+	        String actualTitle = "";
+
+	        driver.get(baseUrl);
+	        
+	        actualTitle = driver.getTitle();
+	        System.out.println(actualTitle);
+	}
+}
