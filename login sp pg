@@ -1,0 +1,35 @@
+package login;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Login_demo {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver", "F:\\prctical final\\gecko\\gecko.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\prctical final\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();	 
+		driver.get("F:\\prctical final\\Selenium\\login pg.html");
+		driver.findElement(By.xpath("/html/body/input[1]")).sendKeys("abc");
+		driver.findElement(By.xpath("/html/body/input[2]")).sendKeys("xyz");
+		driver.findElement(By.xpath("/html/body/input[3]")).sendKeys("abcxyz");
+
+	}
+}
+
+
+<html>
+<body>
+Name:<input type="Text" text="Name"></br>
+Surname:<input type="Text" text="Surname"></br>
+<a href="login.html"><button>Submit</button></a>
+</body>
+</html>
+
+<html>
+<body>
+<h1>Welcome to webpage</h1>
+</body>
+</html>
