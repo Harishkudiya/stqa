@@ -1,0 +1,49 @@
+package checkbox;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import java.util.concurrent.TimeUnit;
+
+public class checkbox_demo {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.gecko.driver","F:\\prctical final\\gecko\\gekodriver.exe");
+		System.setProperty("webdriver.chrome.driver","F:\\prctical final\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.get("F:\\prctical final\\Selenium\\check.html");
+		java.util.List<WebElement> checkboxs=driver.findElements(By.name("F"));
+		int checkedcount=0,uncheckedcount=0;
+		for(int i=0;i<checkboxs.size();i++) {
+			System.out.println(i+"checkbox is selected"+checkboxs.get(i).isSelected());
+			if (checkboxs.get(i).isSelected()) {
+				checkedcount++;
+			}
+			else {
+				uncheckedcount++;
+			}
+		}
+		System.out.println("no of checkbox selected" +checkedcount);
+		System.out.println("no of checkbox unselected" +uncheckedcount);
+	}
+}
+
+
+<html>
+<body>
+
+<!--Name:<input type="Text" text="Name"></br>
+Surname:<input type="Text" text="Surname"></br>
+Passwd:<input type="password" text="Password"></br></br>
+<input type="submit" value="Login"> </br></br>
+-->
+
+<h1>CheckBoxes</h1>
+<input type="checkbox" checked="True" name="F" value="Biryani">Biryani <br>
+<input type="checkbox" name="F" value="Noodles">Noodles <br>
+<input type="checkbox" name="F" value="Burger"> Burger<br>
+<input type="checkbox" name="F" value="Pizza">Pizza <br>
+<input type="checkbox" name="F" value="Dosa"> Dosa<br>
+</body>
+</html>
