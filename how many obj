@@ -1,0 +1,31 @@
+package obj;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+
+
+public class obj_demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.gecko.driver","F:\\prctical final\\gecko\\gekodriver.exe");
+		System.setProperty("webdriver.chrome.driver","F:\\prctical final\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("F:\\prctical final\\Selenium\\Login.html");
+		java.util.List<WebElement>links=driver.findElements(By.tagName("a"));
+		System.out.println(links.size());
+		for(int i=1;i<=links.size()-1;i++) {
+			System.out.println(links.get(i).toString());
+			
+			
+			
+		}
+		java.util.List<WebElement>checkboxs=driver.findElements(By.tagName("input"));
+		System.out.println("number of links:"+links.size());
+		System.out.println("no of checkbox:"+checkboxs.size());
+		
+
+	}
+
+}
