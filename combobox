@@ -1,0 +1,31 @@
+package iteams;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import java.util.concurrent.TimeUnit;
+
+public class items_demo {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.gecko.driver","F:\\prctical final\\gecko\\gekodriver.exe");
+		System.setProperty("webdriver.chrome.driver","F:\\prctical final\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.get("F:\\prctical final\\Selenium\\combo.html");
+		java.util.List<WebElement>ComboBox=driver.findElements(By.tagName("option"));
+		System.out.println("number of items in combo box"+ComboBox.size());
+		for(int i=0;i<ComboBox.size()-1;i=i+1) {
+			System.out.println(ComboBox.get(i).getText());
+			
+		}
+		java.util.List<WebElement>links=driver.findElements(By.tagName("a"));
+		System.out.println("number of links"+links.size());
+		for(int i=0;i<links.size()-1;i=i+1) {
+			System.out.println(links.get(i).getText());
+			
+		}
+		
+	}
+
+}
